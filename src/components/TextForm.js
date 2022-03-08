@@ -7,12 +7,15 @@ export default function TextForm(props) {
     const handleUpClick = () => {
         let newtext = text.toUpperCase();
         setText(newtext);
+        props.showAlert('Converted to upper case', 'success')
     }
 
     //convert to lower letter
     const handleLoClick = () => {
         let newtext = text.toLowerCase();
         setText(newtext);
+
+        props.showAlert('Converted to lower case', 'success')
     }
 
     //clear all text
@@ -53,8 +56,9 @@ export default function TextForm(props) {
     //to copy text:
     const handleCopyText =()=>{
        let text = document.getElementById("mybox");
-       text.select();
-       navigator.clipboard.writeText(text.value);
+        text.select();
+        navigator.clipboard.writeText(text.value);
+        props.showAlert('Coppied to Clipboard', 'success')
         };
 
     //handle extra spaces
@@ -64,8 +68,6 @@ export default function TextForm(props) {
         setText(newText.join(" "))
  
          };
-
-
 
 
     const handleOnChange = (event) => {
@@ -94,7 +96,7 @@ const [text, setText] = useState('')
         </div>
         <div className="container my-3" style={{ color: props.mode=='dark'? 'white': 'black' }}>
             <h2>Your Text Summary</h2>
-                <p>{text.split(" ").length} words and {text.length} Characters</p>
+                <p>{text.length>0 ? text.trim().split(" ").length : 0} words and {text.length} Characters</p>
                 <p>{0.008 *text.split(" ").length} per read</p>
             <h2>Preview</h2>
              <p>{text.length>0? text: "Enter something above textfeild to preview in it"}</p>
