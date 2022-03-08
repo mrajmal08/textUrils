@@ -1,6 +1,11 @@
+# My First React Application
+# text Utils is utlity which can be used to maniplate your text in this way you want!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
