@@ -57,9 +57,9 @@ function App() {
 
         <Routes>
 
-          <Route exact path="about" element={<About />} />     
+          <Route exact path="about" element={<About  mode={mode}/>} />     
            
-            <Route exact path="/" element= { <TextForm showAlert={showAlert} heading ="Enter text to finalize" mode={mode} toggleMode={toggleMode}/>} />
+            <Route exact path="/" element= { <TextForm showAlert={showAlert} heading ="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} toggleMode={toggleMode}/>} />
           
           </Routes>
 
